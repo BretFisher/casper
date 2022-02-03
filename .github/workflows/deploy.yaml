@@ -4,14 +4,12 @@ on:
   push:
     branches:
       - v4-migration
-  pull_request:
-    branches:
-      - v4-migration
   workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: staging
     steps:
       - uses: actions/checkout@v2
       
