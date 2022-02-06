@@ -32,20 +32,8 @@ into the {body} of the default.hbs template --}}
 <main id="site-main" class="site-main outer">
     <div class="inner posts">
 
-        {{#get "pages" limit="all" filter="primary_tag:course"}}
-            <h1> Courses </h1>
-            <div class="post-feed list">
-                {{#foreach pages}}
+        {{#get "posts"}}
 
-                    {{> "course-card"}}
-
-                {{/foreach}}
-            </div>
-        {{/get}}
-
-        
-        {{#get "posts" limit="all" filter="featured:true"}}
-            <h1> Articles </h1>
             <div class="post-feed{{#match @custom.feed_layout "List"}} list{{/match}}">
                 {{#foreach posts}}
 
@@ -54,6 +42,7 @@ into the {body} of the default.hbs template --}}
 
                 {{/foreach}}
             </div>
+
         {{/get}}
 
     </div>
